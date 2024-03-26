@@ -31,7 +31,7 @@ public class List {
     public void addFirst(char chr) {
         
         Node newNode = new Node(CharData(chr));
-        if (first = null) {
+        if (first == null) {
             first = newNode;
         }
         else
@@ -47,10 +47,12 @@ public class List {
     public String toString() {
         // should return a string or print each line?
         Node current = first;
+        String str = "";
         while (current != null) {
-            System.out.println( CharData.toString(current));
+            str += CharData.toString(current);
             current = current.next;
         }
+        return str;
     }
 
     /** Returns the index of the first CharData object in this list
@@ -82,7 +84,7 @@ public class List {
             addFirst(chr);
         }
         else {
-            current.cd.count++;
+            current.cp.count++;
         }
     }
 
@@ -119,7 +121,7 @@ public class List {
         {
             current = current.next;
         }
-        return current;
+        return current.cp;
     }
 
     /** Returns an array of CharData objects, containing all the CharData objects in this list. */
